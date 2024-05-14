@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Famous Quotes{% endblock %}
+
+{% block content %}
+<h1>{{ identity_name }} Quotes</h1>
+<ul class="quote-detail">
+    {% for quote in quote_list %}
+    <li class="quote">
+        <p class="quote-content">{{ quote.content }}</p>
+        <p class="quote-author">- {{ quote.author }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<!-- 分页导航 -->
+{% if total_pages > 1 %}
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="/identity/{{ identity_name }}?page={{ page - 1 }}">&lt; &lt; &lt;   </a>
+        {% else %}
+            <span style="color: gray;"> </span>
+        {% endif %}
+        {% set start_page = 1 if page - 2 < 1 else page - 2 %}
+        {% set end_page = total_pages if start_page + 4 > total_pages else start_page + 4 %}
+        {% for page_num in range(start_page, end_page + 1) %}
+            {% if page_num == page %}
+                <span class="current-page">{{ page_num }}</span>
+            {% else %}
+                <a href="/identity/{{ identity_name }}?page={{ page_num }}">{{ page_num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if page < total_pages %}
+            <a href="/identity/{{ identity_name }}?page={{ page + 1 }}">  &gt; &gt; &gt;</a>
+
+        {% endif %}
+    </div>
+{% endif %}
+
+{% endblock %}

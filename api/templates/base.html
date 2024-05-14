@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="referrer" content="no-referrer">
+    <title>{% block title %}Famous Quotes{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+
+  <header>
+
+        <div class="logo-container">
+            <img src="/static/title-pic.jpg"  alt="Famous Quotes" class="main-image">
+        </div>
+        <div class="title-container" id="title-name">
+            <p>Famous    Quotes</p>
+        </div>
+            <h1>
+                {% block h1 %}
+                {% endblock %}
+            </h1>
+        <nav class="nav">
+            {% block nav %}
+            <ul class="nav-ul">
+                <li><a href="{{ url_for('country.country_quotes') }}">By country</a></li>
+                <li><a href="{{ url_for('attribute.attribute_quotes') }}">By attribute</a></li>
+                <li><a href="{{ url_for('identity.identity_quotes') }}">By identity</a></li>
+                <li><a href="{{ url_for('gender.gender_quotes') }}">By gender</a></li>
+            </ul>
+            {% endblock %}
+        </nav>
+
+  </header>
+
+    <main>
+        <!-- 面包屑导航 -->
+        <nav class="breadcrumbs">
+        {% for breadcrumb in breadcrumbs %}
+        <span>
+            {% if breadcrumb.url %}
+                <a href="{{ breadcrumb.url }}">{{ breadcrumb.name }}</a>
+            {% else %}
+                {{ breadcrumb.name }}
+            {% endif %}
+        </span>
+            {% if not loop.last %}
+                <span class="separator">/</span> <!-- 连接符 -->
+            {% endif %}
+        {% endfor %}
+        </nav>
+
+        {% block msg %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2023 Famous Quotes. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

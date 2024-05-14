@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Famous Quotes{% endblock %}
+
+{% block content %}
+<h1>Quotes by attribute</h1>
+    <div class="classify">
+        <ul>
+            {% for attribute in attributes %}
+            <li class="Class-details"><a href="{{ url_for('attribute.attribute_quotes_detail', attribute_name=attribute) }}">{{ attribute }} Quotes</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

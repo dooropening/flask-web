@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Famous Quotes{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <section class="left-section">
+        <div id="country" class="part">
+            <h2><a href="{{ url_for('country.country_quotes') }}">Quotes by country</a></h2>
+            <ul>
+            <li><h3><a href="{{ url_for('country.country_quotes_detail', country_name='China') }}">Chinese Quotes</a></h3></li>
+                <li><h3><a href="{{ url_for('country.country_quotes_detail', country_name='USA') }}">American Quotes</a></h3></li>
+                <li><h3><a href="{{ url_for('country.country_quotes_detail', country_name='UK') }}">British Quotes</a></h3></li>
+                <li><h3><a href="{{ url_for('country.country_quotes_detail', country_name='France') }}">French Quotes</a></h3></li>
+                <li><h3><a href="{{ url_for('country.country_quotes_detail', country_name='Germany') }}">Germany Quotes</a></h3></li>
+                <li><h3><a href="{{ url_for('country.country_quotes_detail', country_name='Greece') }}">Greek Quotes</a></h3></li>
+            </ul>
+        </div>
+        <!-- 国家名言链接 -->
+        
+        <hr/>
+        
+        <div id="identity" class="part">
+            <h2><a href="{{ url_for('identity.identity_quotes') }}">Quotes by identity</a></h2>
+            <!-- 身份名言链接 -->
+        </div>
+        <hr/>
+
+        <div id="attribute" class="part">
+            <h2><a href="{{url_for('attribute.attribute_quotes') }}">Quotes by attribute</a></h2>
+            <!-- 属性名言链接 -->
+        </div>
+        <hr/>
+        <div id="gender" class="part">
+            <h2><a href="{{ url_for('gender.gender_quotes') }}">Quotes by gender</a></h2>
+            <!-- 性别名言链接 -->
+        </div>
+
+    </section>
+    
+    <section class="right-section">
+        <div id="latest-quotes" class="part">
+            <h2><a href="#Latest Quotes">Latest Quotes</a></h2>
+            <!-- 列出前5条热门名言 -->
+        </div>
+        
+        <hr/>
+        
+        <div id="Hottest-quotes" class="part">
+            <h2><a href="#Hotest Quotes">Hottest Quotes</a></h2>
+            <!-- 列出每周名言链接 -->
+        </div>
+    </section>
+</div>
+
+{% endblock %}

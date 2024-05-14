@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Famous Quotes{% endblock %}
+
+{% block content %}
+<h1>Quotes by identity</h1>
+    <div class="classify">
+        <ul>
+            {% for identity in identities %}
+            <li class="Class-details"><a href="{{ url_for('identity.identity_quotes_detail', identity_name=identity) }}">{{ identity }} Quotes</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
