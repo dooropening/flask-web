@@ -27,6 +27,3 @@ def category(category_name):
     breadcrumbs = generate_breadcrumbs(category_name)  # 调用生成面包屑导航的函数
     return render_template('category.html', category_name=category_name, breadcrumbs=breadcrumbs)
 
-
-if __name__ == '__main__':
-    app.run()
