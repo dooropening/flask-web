@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-from attribute import attribute_bp
+from leibie import attribute_bp
 from country import country_bp
 from identity import identity_bp
 from gender import gender_bp

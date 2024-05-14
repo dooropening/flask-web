@@ -3,7 +3,6 @@ from flask import request
 from mongo_local_operation import collection
 
 
-# 创建一个名为 'attributes_bp' 的蓝图
 identity_bp = Blueprint('identity', __name__)
 
 
