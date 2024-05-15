@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Famous Quotes{% endblock %}
+
+{% block content %}
+<h1>Quotes by gender</h1>
+    <div class="classify">
+        <ul>
+            {% for gender in genders %}
+            <li><a href="{{ url_for('gender.gender_quotes_detail', gender_name=gender) }}">{{ gender }} Quotes</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

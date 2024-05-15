@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Famous Quotes{% endblock %}
+
+{% block content %}
+<h1>Quotes by Country</h1>
+    <div class="classify">
+        <ul >
+            {% for country in countries %}
+            <li><a href="{{ url_for('country.country_quotes_detail', country_name=country) }}">{{ country }} Quotes</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
