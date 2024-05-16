@@ -1,31 +1,90 @@
-/* 导航样式 */
-/* 导航样式 */
+/* 样式表 */
 html {
-    font-size: 16px; /* 设置根元素的字体大小为 16 像素 */
-    min-height: 100%; /* 设置最小高度为屏幕高度 */
+    font-family: sans-serif;
+    background: #eee;
+    padding: 1rem;
+}
+
+body {
+    margin: 0 auto;
+    background: white;
+}
+
+h1 {
+    color: #377ba8;
+    text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #377ba8;
+}
+
+a {
+    color: #377ba8;
+    text-decoration: underline; /* 添加下划线 */
+    padding: 2px 5px; /* 添加一些内边距 */
+    border-radius: 3px; /* 添加圆角 */
+    font-size:1.5rem;
 
 }
-.nav {
+
+hr {
+    border: none;
+    border-top: 1px solid lightgray;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    /* 其他样式 */
+  }
+/* 为包含图片的父元素设置样式 */
+.logo-container {
+    position: relative;
+    text-align: center;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.title-container {
     position: absolute;
-    bottom: 10px; /* 距离刊头图片底部的距离 */
-    left: 10px; /* 距离刊头图片左侧的距离 */
-}
-
-.nav-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-ul li {
-    display: inline;
-    margin-right: 10px; /* 导航链接之间的间距 */
-}
-
-.nav-ul li a {
+    top: 3%;
+    left: 8%;
+    transform: translate(-5%, -5%);
+    z-index: 2;
     color: white;
-    text-decoration: none;
-    font-size: 1rem;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 为主图片设置样式 */
+.main-image {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(-20%);
+}
+
+/* 导航样式 */
+.nav ul {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    top: 290px;
+}
+
+.nav ul li {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 0 15px 0 0;
+    color: white;
+}
+.classify ul li {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 15px 0;
 }
 
 /* 页面布局 */
@@ -44,33 +103,48 @@ html {
     flex: 1;
     background-color: #f2f2f2;
     padding: 20px;
-    margin-left: 5px;
+    margin: 0 0 0 5px;
 }
 
-/* 主页图片样式 */
-.logo-container {
-    position: relative;
-    text-align: left;
-    height: 30vh;
-    overflow: hidden;
+/* 名言样式 */
+.quote {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.quote-content {
+    font-size:1.5rem;
+    color: #333;
+    line-height: 1.5;
+}
 
-.main-image {
-    background-image: url("/static/title-pic.jpg");
-    background-size: cover; /* 让背景图尽可能覆盖整个容器 */
-    background-position: center; /* 居中显示背景图 */
-    width: 100%; /* 图片宽度占满父容器 */
-    height: 100%; /* 图片高度占满父容器 */
+.quote-author {
+    font-style: italic;
+    font-size:1.5rem;
+    color: #666;
+    text-align: right;
+    padding-right: 50px; /* 向左添加一些填充 */
+
 }
-#title-name {
-    position: absolute;
-    top: 5px;
-    left: 25%;
-    transform: translateX(-50%);
-    font-family: fantasy;
-    font-size: 3rem;
-    word-spacing: 30px;
-    color: white; /* Ensure title text is visible on the image */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+.pagination{
+    text-align: center;
+    font-size:1.5rem;
 }
+.breadcrumbs {
+    font-size:1.5rem;
+    margin: 0 0 0 10px;
+}
+/* 添加连接符样式 */
+.separator {
+    color: #999; /* 连接符的颜色 */
+}
+
+#title-name{
+        font-family:fantasy;
+        font-size:4rem;
+        word-spacing: 30px;
+
+    }
