@@ -1,10 +1,10 @@
 from flask import Flask
 from flask import render_template
-from attribute import attribute_bp
-from country import country_bp
-from identity import identity_bp
-from gender import gender_bp
-from utils import generate_breadcrumbs  # 导入生成面包屑导航的函数
+from api.attribute import attribute_bp
+from api.country import country_bp
+from api.identity import identity_bp
+from api.gender import gender_bp
+from api.utils import generate_breadcrumbs  # 导入生成面包屑导航的函数
 
 
 app = Flask(__name__)

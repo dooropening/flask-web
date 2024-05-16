@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 from flask import request
-from mongo_local_operation import collection
+from api.mongo_local_operation import collection
 
 gender_bp = Blueprint('gender', __name__)
 
